@@ -46,26 +46,27 @@ bucle2() */
 //1.4
 
 const countries = [
-	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=1'}, 
-	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=2'},
-	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=3'},
-	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=4'},
-	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=5'}
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=1', number: 1}, 
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=2', number: 2},
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=3', number: 3},
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=4', number: 4},
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=5', number: 5}
 ];
 
-const secondDiv = document.querySelector('.secondDiv')
-const thirdDiv = document.querySelector('.thirdDiv')
 const generate = document.querySelector('.generateImg')
+const newDiv = document.querySelector('.images') 
 
-function printImg() {
+function printImg() {    
     for (let i = 0; i < countries.length; i++) {
         let newHeader = document.createElement('h4')
-        let newContentHeader = document.createTextNode(`${countries[i].title}`)
+        let newContentHeader = document.createTextNode(`${countries[i].title} `)
+        let anotherContent = document.createTextNode(`${countries[i].number}`)
         newHeader.appendChild(newContentHeader);
-        secondDiv.appendChild(newHeader)
+        newHeader.appendChild(anotherContent);
+        newDiv.appendChild(newHeader)
         let newImg = document.createElement('img');
         newImg.src = `${countries[i].imgUrl}.jpg`
-        thirdDiv.appendChild(newImg)
+        newDiv.appendChild(newImg)
     }
 }
 
@@ -84,16 +85,35 @@ btn.addEventListener('click', deleteTheLastElement)
 
 //1.6
 
-const buttons = document.querySelector('.button')
+const anotherb1 = document.querySelector('#b1')
+const anotherb2 = document.querySelector('#b2')
+const anotherb3 = document.querySelector('#b3')
+const anotherb4 = document.querySelector('#b4')
+const anotherb5 = document.querySelector('#b5')
 
 function deleteButtons() {
-    for (let i = 0; i < buttons.length; i++) {
-        if (buttons.value === buttons[i]) {
-            countries.splice(countries[i], countries[i] + 1)
-        }
-        
-    }
+    countries.splice(`${anotherb1.value - 1}`, 1)
+    printImg()
+}
+function deleteButtons2() {
+    countries.splice(`${anotherb2.value - 1}`, 1)
+    printImg()
+}
+function deleteButtons3() {
+    countries.splice(`${anotherb3.value - 1}`, 1)
+    printImg()
+}
+function deleteButtons4() {
+    countries.splice(`${anotherb4.value - 1}`, 1)
+    printImg()
+}
+function deleteButtons5() {
+    countries.splice(`${anotherb5.value - 1}`, 1)
     printImg()
 }
 
-buttons.addEventListener('click', deleteButtons)
+anotherb1.addEventListener('click', deleteButtons)
+anotherb2.addEventListener('click', deleteButtons2)
+anotherb3.addEventListener('click', deleteButtons3)
+anotherb4.addEventListener('click', deleteButtons4)
+anotherb5.addEventListener('click', deleteButtons5)
