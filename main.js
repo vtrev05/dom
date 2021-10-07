@@ -1,8 +1,8 @@
-
+'use strict';
 
 //1.1
 
-/* const countries = ['Japón', 'Nicaragua', 'Suiza', 'Australia', 'Venezuela'];
+const countries = ['Japón', 'Nicaragua', 'Suiza', 'Australia', 'Venezuela'];
 const div = document.querySelector('.div')
 const ul = document.createElement('ul')
 div.appendChild(ul)
@@ -16,16 +16,16 @@ function bucle() {
         
     }
 }
-bucle() */
+bucle()
 
 //1.2
 
-/* const deletedNode = document.querySelector('.fn-remove-me')
-deletedNode.remove() */
+const deletedNode = document.querySelector('.fn-remove-me')
+deletedNode.remove()
 
 //1.3
 
-/* const cars = ['Mazda 6', 'Ford fiesta', 'Audi A4', 'Toyota corola'];
+const cars = ['Mazda 6', 'Ford fiesta', 'Audi A4', 'Toyota corola'];
 const test = document.querySelector(`div[data-function="printHere"]`)
 
 const ul2 = document.createElement('ul')
@@ -40,7 +40,7 @@ function bucle2() {
         
     }
 }
-bucle2() */
+bucle2()
 
 
 //1.4
